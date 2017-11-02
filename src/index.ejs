@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<header class="header">
+    <div class="header__logo">
+        <div class="container">
+            <div class="logo__shop"></div>
+            <div class="logo__phone">
+                +7 (812) 2•12•85•06
+            </div>
+            <div class="logo__oggetto"></div>
+        </div>
+    </div>
+    <div class="header__nav">
+        <% const list = ['LISP', 'OCaml', 'JavaScript', 'Python', 'PHP'] %>
+        <div class="container">
+            <nav class="menu">
+                <ul class="menu__list">
+                    <% list.forEach(function(item) { %>
+                        <li class="menu__item">
+                            <% if(item == 'LISP'){%>
+                                <p class="menu__link disactive"><%= item %></p>
+                            <% }else { %>    
+                                <a href="#" class="menu__link"><%= item %></a>
+                            <% }; %>
+                        </li>
+                    <% }); %>
+                </ul>
+            </nav>
+            <div class="search">
+                <form action="#" method="POST">
+                    <input type="text">
+                    <button type="submit" id="search__submit"></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="main">
+    <div class="container">
+        <div class="way">
+            <% const list_way = ['LISP' , 'Одежда' , 'Футболки'] %>
+            <ul class="way__list">
+                <% list_way.forEach(function(item) { %>
+                    <li class="way__item">
+                        <% if(item != 'Футболки') { %>
+                            <a href="#" class="way__link"><%= item %></a>
+                        <% } else { %>
+                            <p class="way__link folder"><%= item %></p>
+                        <% }; %>        
+                    </li>
+                <% }); %>    
+            </ul>
+        </div>
+        <div id="image__product">
+            <img src="img/tshirt_white.jpg" alt="" class="product_images">
+        </div>
+        <div class="info__product">
+            <p class="name__product">Футболка Alien technology</p>
+            <p class="product__features">Состав: 100% хлопок, динамическая типизация, польская нотация. Производитель:</p>
+            <p class="product__features">Россия.</p>
+            <div class="product__form">
+                <form action="#" method="POST" id="form">
+                    <span class="product__prise">1500₽</span>
+                    <div class="product__size">
+                        <p class="text__size">Размер:</p>
+                        <% const list_size = ['S' , 'M' , 'L'] %>
+                        <div class="size__choice">
+                            <% list_size.forEach(function(item) { %>
+                                <% if(item=='S') { %>
+                                    <input type="radio" name="size" id="size__<%=item%>" checked="checked">
+                                <% }else{ %>    
+                                    <input type="radio" name="size" id="size__<%=item%>">
+                                <% }; %>
+                                <label for="size__<%=item%>" class="size__square"><%=item%></label>
+                            <% }); %>
+                        </div>
+                    </div>
+                    <div class="product__color">
+                        <p class="text__color">Цвет:</p>
+                        <% list_color = ['white' , 'yellow' , 'green'] %>
+                        <div class="color__choice" id="choice">
+                            <% list_color.forEach(function(item) { %>
+                                <% if(item=='white') { %>
+                                    <input type="radio" name="color" id="color__<%=item%>" checked="checked">
+                                <% }else{ %>    
+                                    <input type="radio" name="color" id="color__<%=item%>">
+                                <% }; %>
+                                <label for="color__<%=item%>" class="color__square" id="tshirt_<%=item%>"></label>
+                            <% }); %>
+                        </div>
+                    </div>
+                    <div class="product__buy">
+                        <button type="submit" id="buy__submit">Купить</button>
+                    </div>
+                    <div class="product__postpone">
+                        <a href="#">Отложить на потом</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="container">
+        <div class="footer__info">
+            <div class="footer__info-text">
+                <div class="support">
+                    <p class="info__name">Сервис и поддержка</p>
+                    <% const list_support1  = ['Как сделать заказ' , 'Возврат товара' , 'Публичная сфера' , 'Доставка'] %>
+                    <% const list_support2 = ['Способы оплаты' , 'Правила продажи' , 'Возврат денежных средств' , 'Вопросы и ответы'] %>
+                    <ul class="support__list1">
+                        <% list_support1.forEach(function(item) { %>
+                            <li class="list1__item">
+                                <a href="#"><%=item%></a>
+                            </li>
+                        <% }); %>
+                    </ul>
+                    <ul class="support__list2">
+                        <% list_support2.forEach(function(item) { %>
+                            <li class="list2__item">
+                                <a href="#"><%=item%></a>
+                            </li>
+                        <% }); %>
+                    </ul>
+                </div>
+                <div class="info__company">
+                    <p class="info__name">О нас</p>
+                    <% const list_info1 = ['О нас' , 'Контакты' , 'Вакансии' , 'Партнерам'] %>
+                    <% const list_info2 = ['Сертификаты' , 'Преимущества' , 'Наши скидки'] %>
+                    <ul class="info__list1">
+                        <% list_info1.forEach(function(item) { %>
+                            <li class="list1__item">
+                                <a href="#"><%=item%></a>
+                            </li>
+                        <% }); %>
+                    </ul>
+                    <ul class="info__list2">
+                        <% list_info2.forEach(function(item) { %>
+                            <li class="list2__item">
+                                <a href="#"><%=item%></a>
+                            </li>
+                        <% }); %>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-info-bonus">
+                <div class="label_soc">
+                    <% const list_set = ['facebook' , 'twitter' , 'instagram'] %>
+                    <ul>
+                        <% list_set.forEach(function(item) { %>
+                            <li>
+                                <a href="#" id="soc_<%=item%>"></a>
+                            </li>
+                        <% }); %>
+                    </ul>
+                </div>
+                <div class="bonus__text">
+                    <ul>
+                        <li id="bonus1">бесплатная доставка от 4000 ₽</li>
+                        <li id="bonus2">пробники в подарок при каждой покупке</li>
+                        <li id="bonus3">акции и подарки за покупку</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="company__text">
+            <p>2005-2017 © 7h35h0p.ru — модный интернет-магазин одежды, обуви и аксессуаров.</p>
+            <p>Все права защищены. Доставка по всей России!</p>
+        </div>
+    </div>
+</footer>
+<script src="js/scripts.js"></script>
+</body>
+</html>
