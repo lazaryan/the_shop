@@ -138,9 +138,17 @@ body{
         width: 100%;
     }
 
+    &-i{
+        @media @phone-strict{
+            margin: 0 auto;
+            width: 40%;
+            min-width: 320px;
+        }
+    }
+
     &__list{
         height: 100%;
-        width: 100%;
+        width: auto;
     }
 
     &__item{
@@ -218,7 +226,7 @@ body{
 .way{
     height: 75px;
     width: 100%;
-    margin-left: 10px;
+    //padding-left: 10px;
 
     &__list{
         height: 100%;
@@ -295,7 +303,7 @@ body{
             height: 90vw;
             clear: both;
             float: none;
-            margin: 0 auto;
+            margin-left: none;
         }
     }
 

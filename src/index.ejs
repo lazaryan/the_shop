@@ -29,17 +29,19 @@
             <div class="content">
                 <nav class="menu">
                     <% const nav = ['LISP', 'OCaml', 'JavaScript', 'Python', 'PHP'] %>
-                    <ul class="menu__list">
-                        <% nav.forEach(function(item){ %>
-                            <li class="menu__item">
-                                <% if (item === 'LISP') { %>
-                                    <a href="#" class="menu__link menu__link_active"><%=item%></a>
-                                <% } else { %>
-                                    <a href="#" class="menu__link"><%=item%></a>
-                                <% }; %>        
-                            </li>
-                        <% }); %>
-                    </ul>
+                    <div class="menu-i">
+                        <ul class="menu__list">
+                            <% nav.forEach(function(item){ %>
+                                <li class="menu__item">
+                                    <% if (item === 'LISP') { %>
+                                        <a href="#" class="menu__link menu__link_active"><%=item%></a>
+                                    <% } else { %>
+                                        <a href="#" class="menu__link"><%=item%></a>
+                                    <% }; %>        
+                                </li>
+                            <% }); %>
+                        </ul>
+                    </div>
                 </nav>
                 <form action="#" method="POST" class="search">
                     <input type="text" class="search__input">
