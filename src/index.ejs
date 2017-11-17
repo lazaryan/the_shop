@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>7h3 5h0p</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<header class="header">    
+        <div class="header-logos">
+            <div class="content">
+                <div class="header-logos__the_shop-logo">
+                    <a href="#" class="header-logos__the_shop"></a>
+                </div>
+                <div class="header-logos__phone">
+                    <p class="header-logos__number">
+                        +7 (812) 2&#8226;12&#8226;85&#8226;06
+                    </p>
+                </div>
+                <div class="header-logos__oggetto-logo">
+                    <a href="#" class="header-logos__oggetto"></a>
+                </div>
+            </div>
+        </div>
+        <div class="header-search">
+            <div class="content">
+                <nav class="menu">
+                    <% const nav = ['LISP', 'OCaml', 'JavaScript', 'Python', 'PHP'] %>
+                    <div class="menu-i">
+                        <ul class="menu__list">
+                            <% nav.forEach(function(item){ %>
+                                <li class="menu__item">
+                                    <% if (item === 'LISP') { %>
+                                        <a href="#" class="menu__link menu__link_active"><%=item%></a>
+                                    <% } else { %>
+                                        <a href="#" class="menu__link"><%=item%></a>
+                                    <% }; %>        
+                                </li>
+                            <% }); %>
+                        </ul>
+                    </div>
+                </nav>
+                <form action="#" method="POST" class="search">
+                    <input type="text" class="search__input">
+                    <button type="submit" class="search__submit"></button>
+                </form>
+            </div>
+        </div>
+</header>
+<div class="main">
+    <div class="content">
+        <div class="way">
+            <% const list_way = ['LISP' , 'Одежда' , 'Футболки'] %>
+            <ul class="way__list">
+                <% list_way.forEach(function(item){ %>
+                    <li class="way__item">
+                        <% if (item === 'Футболки') { %>
+                            <a href="#" class="way__link way__link_active"><%=item%></a>
+                        <% } else { %>
+                            <a href="#" class="way__link"><%=item%></a>
+                        <% }; %>        
+                    </li>
+                <% }); %>
+            </ul>
+        </div>
+        <div class="product">
+            <div class="product-images">
+                <img src="img/tshirts/tshirt_white.jpg" alt="Футболка" id="tshirt" class="product_image">
+            </div>
+            <div class="product-details">
+                <div class="product-details__frame">
+                    <h1 class="product-details__name">Футболка Alien Technology</h1>
+                    <p class="product-details__composition">Состав: 100% хлопок, динамическая типизация, польская нотация. Производство:</p>
+                    <p class="product-details__composition">Россия</p>
+                </div>
+                <form action="#" method="POST" id="product-form" class="js-product-form">
+                    <div class="product-details__prise">
+                        <span class="product-details__rub">1500₽</span>
+                    </div>
+                    <div class="product-details__size">
+                        <% const size = [{name : 'S', class : 'js-product-details__size-active'},
+                                         {name : 'M', class : 'js-product-details__size'},
+                                         {name : 'L', class : 'js-product-details__size'}] %> 
+                        <p>Размер:</p>
+                        <ul class="product-details__size_list">
+                            <% size.forEach(function(item){ %>
+                                <li class="<%=item.class%> product-details__size_link" 
+                                    data-value="<%=item.name%>">
+                                    <%=item.name%>   
+                                </li>
+                            <% }); %>
+                        </ul>                   
+                    </div>
+                    <div class="product-details__color">
+                        <% const color = [{name: 'white' , class: 'js-product-details__color-active', color: '#fff'   },
+                                          {name: 'yellow', class: 'js-product-details__color'       , color: '#E2DA53'},
+                                          {name: 'green',  class: 'js-product-details__color'       , color: '#A5AF96'}] %>
+                        <p>Цвет:</p>
+                        <ul class="product-details__color_list">
+                            <% color.forEach(function(item){ %>
+                                <li data-value="<%=item.name%>" 
+                                    style="background: <%=item.color%>;"
+                                    class="<%=item.class%> product-details__color_link"> 
+                                </li>
+                            <% }); %>
+                        </ul>                 
+                    </div>
+                    <div class="product-details_buy">
+                        <button type="submit" class="product-details__submit">Купить</button>
+                    </div>
+                    <div class="product-details_cart">
+                        <a href="#" class="product-details_cart-img">Отложить на потом</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="content">
+        <div class="footer-top">
+            <div class="footer-top__services">
+                <div class="footer-top__services_column">
+                    <p class="footer-top_name">Сервис и поддержка</p>
+                    <% const top_list1 = ['Как сделать заказ' ,'Возврат товаров','Публичная оферта','Доставка'] %>
+                    <ul class="footer-top__services_list">
+                        <% top_list1.forEach(function(item){ %>
+                            <li class="footer-top__services_link"><a href="#" class="footer-top__services_reference"><%=item%></a></li>
+                        <% }); %>
+                    </ul>
+                    <% const top_list2 = ['Способы оплаты','Правила продажи','Возврат денежных средств','Вопросы и ответы'] %>
+                    <ul class="footer-top__services_list">
+                        <% top_list2.forEach(function(item){ %>
+                            <li class="footer-top__services_link"><a href="#" class="footer-top__services_reference"><%=item%></a></li>
+                        <% }); %>
+                    </ul>
+                </div>
+                <div class="footer-top__services_column">
+                    <p class="footer-top_name">О Компании</p>
+                    <% const top_list3 = ['О нас' ,'Контакты','Вакансии','Партнерам'] %>
+                    <ul class="footer-top__services_list">
+                        <% top_list3.forEach(function(item){ %>
+                            <li class="footer-top__services_link"><a href="#" class="footer-top__services_reference"><%=item%></a></li>
+                        <% }); %>
+                    </ul>
+                    <% const top_list4 = ['Сертификаты','Преимущества','Наши скидки'] %>
+                    <ul class="footer-top__services_list">
+                        <% top_list4.forEach(function(item){ %>
+                            <li class="footer-top__services_link"><a href="#" class="footer-top__services_reference"><%=item%></a></li>
+                        <% }); %>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-top__bonuses">
+                <% list_bonus = [{text: 'бесплатная доставка от 4000 ₽' ,image: 'delivery'},
+                                 {text: 'Пробники в подарок при каждой покупке' ,image: 'samples'},
+                                 {text: 'акции и подарки за покупку', image: 'cup'}]%>
+                <ul class="footer-top__bonuses_list">
+                    <% list_bonus.forEach(function(item){ %>
+                    <li class="footer-top__bonuses_link">
+                        <img src="img/icons/<%=item.image%>.svg" class="footer-top__bonuses_img">
+                        <p class="footer-top__bonuses_text"><%=item.text%></p>
+                    </li>
+                    <% }); %>
+                </ul>
+                <% list_soc = ['facebook', 'twitter', 'instagram'] %>
+                <ul class="footer-top__bonuses-soc_list">
+                    <% list_soc.forEach(function(item){ %>
+                    <li class="footer-top__bonuses-soc_link">
+                        <a href="#"><img src="img/icons/<%=item%>.svg" alt="" class="footer-top__bonuses-soc_img"></a>
+                    </li>
+                    <% }); %>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-bottom_text">2005-2017 © 7h35h0p.ru — модный интернет-магазин одежды, обуви и аксессуаров.</p>
+            <p class="footer-bottom_text">Все права защищены. Доставка по всей России!</p>
+        </div>
+    </div>
+</footer>
+<script src="js/scripts.js"></script>
+</body>
+</html>
